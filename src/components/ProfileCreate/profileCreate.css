@@ -2,11 +2,13 @@
     color: red;
     font-size:medium;
     text-align: left;
-    width:20em;
+    width:90%;
+   padding-left: 3em;
 }
 
 form{
     margin: 0 auto;
+    width: 100%;
 }
 
 
@@ -135,6 +137,8 @@ label{
 .progressbar{
     padding-bottom: 1.5em;
     padding-top: 1.5em;
+    margin:0 auto;
+    width: 90%;
 }
 
 @media screen and (max-width: 900px){
@@ -161,3 +165,37 @@ label{
   flex: 32%;
   align-items: left;
 }
+
+  
+  .form-group {
+    width: 90%;
+    margin-right: 0;
+    text-align: justify;
+    margin: 0 auto;
+  }
+  
+  .input-group {
+    width: 90% !important;
+    margin-right: 0;
+  }
+  
+  .form-control {
+    width: 90% !important;
+    margin:0 auto;
+    display: inline block;
+  }
+
+  .form-text{
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .form-label{
+      width: 90%;
+      margin-right:0 auto;
+      display: inline block;
+      text-align: left;
+      padding-left: 3em;
+      padding-bottom: 0.25em;
+     
+  }
