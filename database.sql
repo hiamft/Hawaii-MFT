@@ -310,42 +310,16 @@ VALUES
 INSERT INTO "treatment_preferences" 
     ("title")
 VALUES
-    ('Adlerian'),
-    ('Any'),
-    ('Art Therapy'),
-    ('Behavioral'),
-    ('Biofeedback/Neurofeedback'),
-    ('Biopsychosocial'),
-    ('Christian'),
-    ('Cognitive/Cognitive Behavioral'),
-    ('DBT (Dialectical Behavior Therapy)'),
-    ('Dance/Movement Therapy'),
-    ('Developmental'),
-    ('EMDR'),
-    ('Eclectic'),
-    ('Emotionally Focused'),
-    ('Existential/Humanistic'),
-    ('Family Systems'),
-    ('Feminist'),
-    ('Gestalt'),
-    ('Hypnotherapy'),
-    ('Integrative'),
-    ('Interpersonal'),
-    ('Multicultural'),
-    ('Music Therapy'),
-    ('Narrative'),
-    ('Neuropsychology'),
-    ('Play Therapy'),
-    ('Psychoeducational'),
-    ('Solution-Focused Brief Therapy'),
-    ('Somatic'),
     ('Acceptance and Commitment (ACT)'),
     ('Adlerian'),
     ('AEDP'),
     ('Applied Behavioral Analysis'),
+    ('Any'),
     ('Art Therapy'),
     ('Attachment-based'),
-    ('Biofeedback'),
+    ('Behavioral'),
+    ('Biofeedback/Neurofeedback'),
+    ('Biopsychosocial'),
     ('Brainspotting'),
     ('Christian Counseling'),
     ('Clinical Supervision and Licensed Supervisors - Coaching'),
@@ -354,7 +328,8 @@ VALUES
     ('Compassion Focused'),
     ('Culturally Sensitive'),
     ('Dance/Movement Therapy'),
-    ('Dialectical (DBT)'),
+    ('Dialectical Behavior Therapy (DBT)'),
+    ('Developmental'),
     ('Eclectic'),
     ('EMDR'),
     ('Emotionally Focused'),
@@ -383,6 +358,7 @@ VALUES
     ('Narrative'),
     ('Neuro-Linguistic'),
     ('Neurofeedback'),
+    ('Neuropsychology'),
     ('Parent-Child Interaction (PCIT)'),
     ('Person-Centered'),
     ('Play Therapy'),
@@ -391,6 +367,7 @@ VALUES
     ('Psychoanalytic'),
     ('Psychobiological Approach Couple Therapy'),
     ('Psychodynamic'),
+    ('Psychoeducational'),
     ('Psychological Testing and Evaluation'),
     ('Rational Emotive Behavior (REBT)'),
     ('Reality Therapy'),
@@ -403,7 +380,8 @@ VALUES
     ('Structural Family Therapy'),
     ('Transpersonal'),
     ('Trauma Focused');
-
+  
+                
 INSERT INTO "age_groups_served" 
     ("title")
 VALUES
@@ -461,8 +439,6 @@ VALUES
     (3,'Couples'),
     (4,'Family'),
     (5,'Group');
-
-	
 	
 -- insert new user info
 INSERT INTO "user"
@@ -1056,4 +1032,4 @@ INSERT INTO "public"."treatment_preferences_pivot"
     ("treatment_preferences_id", "member_id")
 VALUES (3, 15), (55, 15), (36, 15), (45, 15);
 
-UPDATE "public"."user" SET "admin"=TRUE WHERE "id"=1;
+UPDATE "public"."user" SET "passwors"='$2a$10$43nSyq9Y.vpLwwmwaJAhzeOj/PbcFvZLcKmEC4DM/8cmNeUpOHE4S' WHERE "id"=1;
