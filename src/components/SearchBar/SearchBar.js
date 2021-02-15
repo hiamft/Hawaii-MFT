@@ -148,6 +148,9 @@ class SearchBar extends Component {
   componentDidMount() {
     // Gets all members right away on loading
     this.props.dispatch({ type: "FETCH_MEMBERS" });
+    this.props.dispatch({
+      type: "PROFILE_RESET",
+    });
   }
 
   componentDidUpdate() {
