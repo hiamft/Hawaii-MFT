@@ -386,7 +386,7 @@ class ProfileView extends Component {
         </>
       );
     } else {
-      return <p className="loading-error">Loading Profile. If loading is unsuccessful, please refresh the page.</p>;// wait for conditional rendering to load
+      return <p className="loading-error">Loading Profile. If page does not load after 30 seconds, please refresh the page.</p>;// wait for conditional rendering to load
     }
   }
 }
