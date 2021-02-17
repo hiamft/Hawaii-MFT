@@ -27,7 +27,7 @@ class StudentRegisterPage extends Component {
     this.props.dispatch({type:'RESET_NEW_ID'})
     if (this.state.username && this.state.password) {
       this.props.dispatch({
-        type: "SAVE_REGISTER",
+        type: "REGISTER",
         payload: {
           username: this.state.username,
           password: this.state.password,
@@ -40,12 +40,14 @@ class StudentRegisterPage extends Component {
   }; // end registerUser
 
   handleInputChangeFor = (propertyName) => (event) => {
+
     this.setState({
       [propertyName]: event.target.value,
     });
   };
 
   render() {
+
     if (this.props.reduxstate.registrationKeyValidation === "") {
       return <h1>Loading</h1>;
     }
@@ -53,7 +55,7 @@ class StudentRegisterPage extends Component {
       return (
         <h1>
           You are not allowed to create a registration key please contact the
-          admin at Blankety Blank{" "}
+          admin.{" "}
         </h1>
       );
     }

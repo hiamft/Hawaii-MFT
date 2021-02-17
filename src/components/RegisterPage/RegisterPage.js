@@ -52,7 +52,7 @@ class RegisterPage extends Component {
       return (
         <h1>
           You are not allowed to create a registration key please contact the
-          admin at Blankety Blank{" "}
+          admin.{" "}
         </h1>
       );
     }
