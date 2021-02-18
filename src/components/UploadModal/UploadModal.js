@@ -10,7 +10,6 @@ import "../UploadModal/UploadModal.css";
 import "react-image-crop/dist/ReactCrop.css";
 //FireBase
 import { storage } from "../../Firebase";
-import ModalHeader from "react-bootstrap/ModalHeader";
 
 import "../App/App.css";
 

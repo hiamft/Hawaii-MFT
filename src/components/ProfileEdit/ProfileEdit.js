@@ -263,10 +263,13 @@ class ProfileEdit extends Component {
       return (
         <>
           <div>
-            {this.state.enabled ?
+            {this.state.enabled ? (
               <div className="flex-between row-wrap disable-alert">
                 <div className="text">
-                  <p>Your profile is currently published in the directory. Click <b>Hide Profile</b> to unpublish your profile.</p>
+                  <p>
+                    Your profile is currently published in the directory. Click{" "}
+                    <b>Hide Profile</b> to unpublish your profile.
+                  </p>
                 </div>
                 <Button
                   variant="danger"
@@ -283,34 +286,42 @@ class ProfileEdit extends Component {
                   Hide Profile
                 </Button>
               </div>
-              :
+            ) : (
               <>
                 <div className="flex-between row-wrap enable-alert">
                   <div className="text">
-                    <p>Your profile is currently disabled and does not appear in the directory. Click <b>Publish Profile</b> to publish your profile.</p>
+                    <p>
+                      Your profile is currently disabled and does not appear in
+                      the directory. Click <b>Publish Profile</b> to publish
+                      your profile.
+                    </p>
                   </div>
-                  <Button variant="danger" className="disable" onClick={this.enablePress}>
+                  <Button
+                    variant="danger"
+                    className="disable"
+                    onClick={this.enablePress}
+                  >
                     Publish Profile
                   </Button>
                 </div>
               </>
-            }
+            )}
           </div>
 
           <div className="header">
             <h3>My Profile</h3>
           </div>
 
-          
           {/**Here is Basic Info render */}
           {this.state.clickBasic ? (
             <div className="body">
               <div className="flex-between row-wrap">
-                <div >
+                <div>
                   <h4 className="edit-bucket">Basic Info</h4>
                 </div>
-                
+
                 <Button
+                  variant="danger"
                   className="flex-between row-wrap edit-bucket"
                   onClick={() => this.handleSaveBasic()}
                 >
@@ -380,7 +391,7 @@ class ProfileEdit extends Component {
           ) : (
             <div className="body">
               <div className="flex-between row-wrap">
-                  <h4 className="edit-bucket">Basic Info</h4>
+                <h4 className="edit-bucket">Basic Info</h4>
                 <Button
                   className="flex-between row-wrap edit-bucket"
                   onClick={() => this.handleEditBasic()}
@@ -393,30 +404,30 @@ class ProfileEdit extends Component {
                   <div className="border">
                     <Form className="flex-container row">
                       <Form.Row>
-                          <Form.Group as={Col}>
-                            <Form.Label className="label">Prefix</Form.Label>
-                            <Form.Control
-                              disabled={true}
-                              readOnly
-                              defaultValue={this.state.prefix}
-                            />
-                          </Form.Group>
-                          <Form.Group as={Col}>
-                            <Form.Label className="label">First Name</Form.Label>
-                            <Form.Control
-                              disabled={true}
-                              readOnly
-                              defaultValue={this.state.firstName}
-                            />
-                          </Form.Group>
-                          <Form.Group as={Col}>
-                            <Form.Label className="label">Last Name</Form.Label>
-                            <Form.Control
-                              disabled={true}
-                              readOnly
-                              defaultValue={this.state.lastName}
-                            />
-                          </Form.Group>
+                        <Form.Group as={Col}>
+                          <Form.Label className="label">Prefix</Form.Label>
+                          <Form.Control
+                            disabled={true}
+                            readOnly
+                            defaultValue={this.state.prefix}
+                          />
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                          <Form.Label className="label">First Name</Form.Label>
+                          <Form.Control
+                            disabled={true}
+                            readOnly
+                            defaultValue={this.state.firstName}
+                          />
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                          <Form.Label className="label">Last Name</Form.Label>
+                          <Form.Control
+                            disabled={true}
+                            readOnly
+                            defaultValue={this.state.lastName}
+                          />
+                        </Form.Group>
                       </Form.Row>
                     </Form>
 
@@ -434,7 +445,7 @@ class ProfileEdit extends Component {
                       </Form.Group>
                       {this.displayLanguages()}
                     </Form>
-                      <Form className="flex-between row-wrap row last">
+                    <Form className="flex-between row-wrap row last">
                       <Form.Group className="column">
                         <Form.Label className="label">
                           Personal Statement
@@ -446,9 +457,9 @@ class ProfileEdit extends Component {
                           readOnly
                           defaultValue={this.state.statement}
                         />
-                          <Form.Text className="text-muted">
-                            10,000 character limit
-                          </Form.Text>
+                        <Form.Text className="text-muted">
+                          10,000 character limit
+                        </Form.Text>
                       </Form.Group>
                     </Form>
                   </div>
@@ -462,22 +473,19 @@ class ProfileEdit extends Component {
 
           <div className="bodyPhoto">
             <h4>Profile Picture</h4>
-            <div >
-              {this.state.profilePhoto ?
-             
-              <img className="photo" src={this.state.profilePhoto}></img>
-              :
-              <img className="photo" src={imagePlaceholder}></img>
-              }
+            <div>
+              {this.state.profilePhoto ? (
+                <img className="photo" src={this.state.profilePhoto}></img>
+              ) : (
+                <img className="photo" src={imagePlaceholder}></img>
+              )}
               <div className="button upload">
                 <UploadModal
                   refresh={this.getImage}
                   name={this.props.user}
                 ></UploadModal>
               </div>
-
             </div>
-
           </div>
         </>
       );

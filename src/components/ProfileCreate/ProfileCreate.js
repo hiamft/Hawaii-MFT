@@ -13,11 +13,8 @@ import { Prompt } from 'react-router'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import UploadModal from "../UploadModal/UploadModal";
 import Col from 'react-bootstrap/Col';
-var storage = firebase.storage().ref();
 
 class ProfileCreate extends Component {
     //create a state 
