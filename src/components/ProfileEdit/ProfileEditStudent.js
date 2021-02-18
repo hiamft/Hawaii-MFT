@@ -251,7 +251,12 @@ class ProfileEditStudent extends Component {
             {this.state.languages.map((lang) => {
               return (
                 <>
-                  <Form.Control disabled={true} readOnly defaultValue={lang} />
+                  <Form.Control
+                    key={lang.language_id}
+                    disabled={true}
+                    readOnly
+                    defaultValue={lang}
+                  />
                 </>
               );
             })}
@@ -321,6 +326,7 @@ class ProfileEditStudent extends Component {
                 <div className="flex-between row-wrap">
                   <h4>Basic Info</h4>
                   <Button
+                    variant="danger"
                     className="flex-between row-wrap"
                     onClick={() => this.handleSaveBasic()}
                   >
@@ -479,33 +485,13 @@ class ProfileEditStudent extends Component {
             <div>
               <img className="photo" src={this.state.profilePhoto}></img>
 
-              <div className="button">
+              <div className="button upload">
                 <UploadModal
                   refresh={this.getImage}
                   name={this.props.user}
                 ></UploadModal>
               </div>
             </div>
-          </div>
-
-          <div className="body">
-            {this.state.enabled ? (
-              <Button
-                variant="danger"
-                onClick={() => {
-                  if (
-                    window.confirm(
-                      "Are you sure you want to disable this account? A disabled account will no longer appear in the search directory. You may re-enable it at any time."
-                    )
-                  )
-                    this.enablePress();
-                }}
-              >
-                Disable Account
-              </Button>
-            ) : (
-              <Button onClick={this.enablePress}>Enable Account</Button>
-            )}
           </div>
         </>
       );

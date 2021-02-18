@@ -21,18 +21,16 @@ class SearchResults extends Component {
     render() { 
         return (
           <>
-          <div className="cover-photo">
-            <div >
-            </div>
-            
+            <div className="cover-photo">
+              <div></div>
 
               <div className="results-bin">
                 {this.props.therapists[0] && (
                   <h3 className="results-number center">
-                    Hawaiian Islands Association for Marriage & Family Therapist Directory
+                    Hawaiian Islands Association for Marriage & Family Therapist
+                    Directory
                   </h3>
                 )}
-
                 {this.props.therapists.map((therapist) => (
                   // I made it a div to encapsulate the Card instead of just
                   // a Card so if needed we could add more to each result.
@@ -43,6 +41,7 @@ class SearchResults extends Component {
                   // search-result is already a flexbox so adding something will auto-format
                   <div className="flex-evenly">
                     <Card
+                      key={therapist.id}
                       style={{ width: "80%", margin: "10px" }}
                       className="card"
                     >
@@ -69,15 +68,15 @@ class SearchResults extends Component {
                             <div className="name">
                               {therapist.first_name} {therapist.last_name}
                             </div>
-                            {!therapist.student ? 
-                            <div className="island">
-                              {therapist.city}, {therapist.island[0]}
-                            </div>
-                            :
-                            <div className="island">
-                            { therapist.island[0] }
-                            </div>
-                            }
+                            {!therapist.student ? (
+                              <div className="island">
+                                {therapist.city}, {therapist.island[0]}
+                              </div>
+                            ) : (
+                              <div className="island">
+                                {therapist.island[0]}
+                              </div>
+                            )}
                           </div>
                         </Card.Title>
                         {/*
@@ -101,7 +100,7 @@ class SearchResults extends Component {
                       */}
                         <Card.Subtitle className="mb-2 text-muted">
                           <div className="flex-between row-wrap">
-                            {!therapist.student ? 
+                            {!therapist.student ? (
                               <div className="titles">
                                 {/* 
                                 The amount of titles a therapist could have can
@@ -110,14 +109,12 @@ class SearchResults extends Component {
                               */}
                                 {therapist.credentials}
                               </div>
-                            :
-                            <div className="titles">
-                              Student
-                            </div>
-                            }
-                            {!therapist.student ? 
-                            <div className="number">{therapist.phone[0]}</div>
-                            :
+                            ) : (
+                              <div className="titles">Student</div>
+                            )}
+                            {!therapist.student ? (
+                              <div className="number">{therapist.phone[0]}</div>
+                            ) : (
                               <div className="contact-info">
                                 <>
                                   <a
@@ -129,8 +126,7 @@ class SearchResults extends Component {
                                   </a>
                                 </>
                               </div>
-                                  
-                            }
+                            )}
                           </div>
                         </Card.Subtitle>
                         <Card.Text>
@@ -139,12 +135,11 @@ class SearchResults extends Component {
                               {this.truncateString(therapist.statement, 250)}
                             </div>
                             {/* Contact is aligned to the right for visual appeal */}
-                            
-                            {!therapist.student ? 
-                            
-                            <div className="contact-info">
-                              {therapist.email[0]} <br />
-                              {/*
+
+                            {!therapist.student ? (
+                              <div className="contact-info">
+                                {therapist.email[0]} <br />
+                                {/*
                               The link here links to the page it mentions.
                               It does so by turning itself into an https link
                               and then opening that link in a new tab when clicked.
@@ -152,18 +147,18 @@ class SearchResults extends Component {
                               I wanted it to open in a new tab so it doesn't destroy
                               the users search results.
                             */}
-                              <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={`https://${therapist.website}`}
-                              >
-                                {therapist.website}
-                              </a>
-                            </div>
-                          :
-                          ''
-                          }
-                        </div>
+                                <a
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  href={`https://${therapist.website}`}
+                                >
+                                  {therapist.website}
+                                </a>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                          </div>
                         </Card.Text>
                         <Card.Link href={`#/profile/${therapist.id}`}>
                           View Profile

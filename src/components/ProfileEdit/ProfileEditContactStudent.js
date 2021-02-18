@@ -308,6 +308,7 @@ class ProfileEditContactStudent extends Component {
               <div className="flex-between row-wrap first">
                 <h4>Contact Info</h4>
                 <Button
+                  variant="danger"
                   className="flex-between row-wrap"
                   onClick={() => this.handleSaveContact()}
                 >
@@ -316,35 +317,38 @@ class ProfileEditContactStudent extends Component {
               </div>
               <div className="border">
                 <Form className="flex-container row-wrap row">
-                  <Form.Group >
-                    <Form.Label className="label">
-                      Email Address
-                    </Form.Label>
+                  <Form.Group>
+                    <Form.Label className="label">Email Address</Form.Label>
                     <Form.Control
                       defaultValue={this.state.emailPersonal}
-                      onChange={(event) => this.handleChange(event, "emailPersonal")}
+                      onChange={(event) =>
+                        this.handleChange(event, "emailPersonal")
+                      }
                     />
                     <Form.Text className="text-muted">Listed</Form.Text>
                   </Form.Group>
-                  <Form.Group >
+                  <Form.Group>
                     <Form.Label className="label">Website</Form.Label>
                     <Form.Control
                       defaultValue={this.state.website}
                       onChange={(event) => this.handleChange(event, "website")}
                     />
-                    <Form.Text className="text-muted">Listed</Form.Text>
+                    <Form.Text className="text-muted">
+                      Listed - Do NOT include "https://" in url.
+                      Ex.www.mywebsite.com
+                    </Form.Text>
                   </Form.Group>
-                  <Form.Group >
-                    <Form.Label className="label">
-                      Phone Number
-                    </Form.Label>
+                  <Form.Group>
+                    <Form.Label className="label">Phone Number</Form.Label>
                     <Form.Control
                       defaultValue={this.state.phonePersonal}
-                      onChange={(event) => this.handleChange(event, "phonePersonal")}
+                      onChange={(event) =>
+                        this.handleChange(event, "phonePersonal")
+                      }
                     />
                     <Form.Text className="text-muted">
-                       Not Listed (for HIAMFT-use only). Please enter in this
-                     format: (xxx) xxx-xxxx.
+                      Not Listed (for HIAMFT-use only). Please enter in this
+                      format: (xxx) xxx-xxxx.
                     </Form.Text>
                   </Form.Group>
                 </Form>
@@ -353,12 +357,12 @@ class ProfileEditContactStudent extends Component {
 
                 <Form className="flex-container row-wrap row">
                   <Form.Group>
-                    <Form.Label className="label">
-                      Street Address
-                    </Form.Label>
+                    <Form.Label className="label">Street Address</Form.Label>
                     <Form.Control
                       defaultValue={this.state.addressPersonal}
-                      onChange={(event) => this.handleChange(event, "addressPersonal")}
+                      onChange={(event) =>
+                        this.handleChange(event, "addressPersonal")
+                      }
                     />
                     <Form.Text className="text-muted">
                       Not Listed (for HIAMFT-use only)
@@ -371,7 +375,9 @@ class ProfileEditContactStudent extends Component {
                     </Form.Label>
                     <Form.Control
                       defaultValue={this.state.cityPersonal}
-                      onChange={(event) => this.handleChange(event, "cityPersonal")}
+                      onChange={(event) =>
+                        this.handleChange(event, "cityPersonal")
+                      }
                     />
                     <Form.Text className="text-muted">
                       Not Listed (for HIAMFT-use only)
@@ -385,7 +391,9 @@ class ProfileEditContactStudent extends Component {
                     <Form.Control
                       type="number"
                       defaultValue={this.state.zipCodePersonal}
-                      onChange={(event) => this.handleChange(event, "zipCodePersonal")}
+                      onChange={(event) =>
+                        this.handleChange(event, "zipCodePersonal")
+                      }
                     />
                     <Form.Text className="text-muted">
                       Not Listed (for HIAMFT-use only)
@@ -410,9 +418,7 @@ class ProfileEditContactStudent extends Component {
                   <div className="border">
                     <Form className="flex-container row-wrap row">
                       <Form.Group>
-                        <Form.Label className="label">
-                          Email Address
-                        </Form.Label>
+                        <Form.Label className="label">Email Address</Form.Label>
                         <Form.Control
                           disabled={true}
                           readOnly
@@ -420,7 +426,7 @@ class ProfileEditContactStudent extends Component {
                         />
                         <Form.Text className="text-muted">Listed</Form.Text>
                       </Form.Group>
-                      <Form.Group >
+                      <Form.Group>
                         <Form.Label className="label">Website</Form.Label>
                         <Form.Control
                           disabled={true}
@@ -429,23 +435,23 @@ class ProfileEditContactStudent extends Component {
                         />
                         <Form.Text className="text-muted">Listed</Form.Text>
                       </Form.Group>
-                        <Form.Group >
-                        <Form.Label className="label">
-                          Phone Number
-                        </Form.Label>
+                      <Form.Group>
+                        <Form.Label className="label">Phone Number</Form.Label>
                         <Form.Control
                           disabled={true}
                           readOnly
                           defaultValue={this.state.phonePersonal}
                         />
-                        <Form.Text className="text-muted">Not Listed (for HIAMFT-use only)</Form.Text>
+                        <Form.Text className="text-muted">
+                          Not Listed (for HIAMFT-use only)
+                        </Form.Text>
                       </Form.Group>
                     </Form>
 
                     <Form>{this.displayIslands()}</Form>
 
                     <Form className="flex-container row-wrap row">
-                      <Form.Group >
+                      <Form.Group>
                         <Form.Label className="label">
                           Street Address
                         </Form.Label>
@@ -454,10 +460,12 @@ class ProfileEditContactStudent extends Component {
                           readOnly
                           defaultValue={this.state.addressPersonal}
                         />
-                          <Form.Text className="text-muted">Not Listed (for HIAMFT-use only)</Form.Text>
+                        <Form.Text className="text-muted">
+                          Not Listed (for HIAMFT-use only)
+                        </Form.Text>
                       </Form.Group>
 
-                      <Form.Group >
+                      <Form.Group>
                         <Form.Label variant="flat" className="label">
                           City
                         </Form.Label>
@@ -466,10 +474,12 @@ class ProfileEditContactStudent extends Component {
                           readOnly
                           defaultValue={this.state.cityPersonal}
                         />
-                          <Form.Text className="text-muted">Not Listed (for HIAMFT-use only)</Form.Text>
+                        <Form.Text className="text-muted">
+                          Not Listed (for HIAMFT-use only)
+                        </Form.Text>
                       </Form.Group>
 
-                      <Form.Group >
+                      <Form.Group>
                         <Form.Label variant="flat" className="label">
                           Zip Code
                         </Form.Label>
@@ -478,7 +488,9 @@ class ProfileEditContactStudent extends Component {
                           readOnly
                           defaultValue={this.state.zipCodePersonal}
                         />
-                          <Form.Text className="text-muted">Not Listed (for HIAMFT-use only)</Form.Text>
+                        <Form.Text className="text-muted">
+                          Not Listed (for HIAMFT-use only)
+                        </Form.Text>
                       </Form.Group>
                     </Form>
                   </div>

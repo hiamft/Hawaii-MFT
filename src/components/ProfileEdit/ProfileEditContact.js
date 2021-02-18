@@ -276,6 +276,7 @@ class ProfileEditContact extends Component {
                     <div className="flex-between row-wrap first">
                       <h4 className="edit-bucket">Contact Info</h4>
                       <Button
+                        variant="danger"
                         className="flex-between row-wrap edit-bucket"
                         onClick={() => this.handleSaveContact()}
                       >
@@ -323,7 +324,10 @@ class ProfileEditContact extends Component {
                             }
                           />
                         </Form.Group>
-                        <Form.Text className="text-muted">Listed - Do NOT include "https://" in url. Ex. www.mywebsite.com</Form.Text>
+                        <Form.Text className="text-muted">
+                          Listed - Do NOT include "https://" in url. Ex.
+                          www.mywebsite.com
+                        </Form.Text>
                       </Form>
 
                       <Form className="flex-between row-wrap row">
@@ -371,7 +375,9 @@ class ProfileEditContact extends Component {
                               this.handleChange(event, "address")
                             }
                           />
-                          <Form.Text className="text-muted">Street address - Listed</Form.Text>
+                          <Form.Text className="text-muted">
+                            Street address - Listed
+                          </Form.Text>
                         </Form.Group>
 
                         <Form.Group>

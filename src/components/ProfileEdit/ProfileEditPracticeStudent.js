@@ -7,7 +7,6 @@ import { withRouter } from 'react-router';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
 
 //CSS file imports
 import "./ProfileEdit.css";
@@ -194,6 +193,7 @@ class ProfileEditStudentPractice extends Component {
               <div className="flex-between row-wrap first">
                 <h4>Practice Info</h4>
                 <Button
+                  variant="danger"
                   className="flex-between row-wrap"
                   onClick={() => this.handleSavePractice()}
                 >
@@ -340,123 +340,123 @@ class ProfileEditStudentPractice extends Component {
               </div>
             </div>
           ) : (
-              <div className="body">
-                <div className="flex-between row-wrap first">
-                  <h4>Practice Info</h4>
-                  <Button
-                    className="flex-between row-wrap"
-                    onClick={() => this.handleEditPractice()}
-                  >
-                    Edit Practice Info
+            <div className="body">
+              <div className="flex-between row-wrap first">
+                <h4>Practice Info</h4>
+                <Button
+                  className="flex-between row-wrap"
+                  onClick={() => this.handleEditPractice()}
+                >
+                  Edit Practice Info
                 </Button>
-                </div>
-                <div className="border">
-                  <Form className="flex-container row-wrap row">
-                    <Form.Row>
-                      <Form.Group as={Col}>
-                        <Form.Label className="label">
-                          Supervision Status
-                      </Form.Label>
-                        <Form.Control
-                          disabled={true}
-                          readOnly
-                          value={this.state.supervisionStatus}
-                        />
-                        <Form.Text className="text-muted">Listed</Form.Text>
-                      </Form.Group>
-                    </Form.Row>
-                  </Form>
-                  <Form className="flex-container row-wrap row">
-                    <Form.Row>
-                      <Form.Group as={Col}>
-                        <Form.Label className="label">
-                          Demographic Focus
-                      </Form.Label>
-                        <div>
-                          {this.state.clientFocus
-                            ? this.state.clientFocus.map((focus) => {
-                              return (
-                                <>
-                                  <Form.Control
-                                    disabled={true}
-                                    readOnly
-                                    value={focus}
-                                  />
-                                </>
-                              );
-                            })
-                            : ""}
-                          <Form.Text className="text-muted">Listed</Form.Text>
-                        </div>
-                      </Form.Group>
-                      <Form.Group as={Col}>
-                        <Form.Label className="label">Age Group Focus</Form.Label>
-                        <div>
-                          {this.state.clientAges
-                            ? this.state.clientAges.map((focus) => {
-                              return (
-                                <>
-                                  <Form.Control
-                                    disabled={true}
-                                    readOnly
-                                    value={focus}
-                                  />
-                                </>
-                              );
-                            })
-                            : ""}
-                        </div>
-                        <Form.Text className="text-muted">Listed</Form.Text>
-                      </Form.Group>
-                    </Form.Row>
-                  </Form>
-                  <Form className="flex-container row-wrap row">
-                    <Form.Row>
-                      <Form.Group as={Col}>
-                        <Form.Label variant="flat" className="label">
-                          Specialties
-                      </Form.Label>
-                        <div>
-                          {this.state.specialty &&
-                            this.state.specialty.map((specialty) => {
-                              return (
-                                <>
-                                  <Form.Control
-                                    disabled={true}
-                                    readOnly
-                                    value={specialty}
-                                  />
-                                </>
-                              );
-                            })}
-                        </div>
-                        <Form.Text className="text-muted">Listed</Form.Text>
-                      </Form.Group>
-                      <Form.Group as={Col}>
-                        <Form.Label variant="flat" className="label">
-                          Treatment & Approach
-                      </Form.Label>
-                        <div>
-                          {this.state.treatmentPreferences &&
-                            this.state.treatmentPreferences.map((treatment) => {
-                              return (
-                                <>
-                                  <Form.Control
-                                    disabled={true}
-                                    readOnly
-                                    value={treatment}
-                                  />
-                                </>
-                              );
-                            })}
-                        </div>
-                        <Form.Text className="text-muted">Listed</Form.Text>
-                      </Form.Group>
-                    </Form.Row>
-                  </Form>
-                </div>
               </div>
-            )}
+              <div className="border">
+                <Form className="flex-container row-wrap row">
+                  <Form.Row>
+                    <Form.Group as={Col}>
+                      <Form.Label className="label">
+                        Supervision Status
+                      </Form.Label>
+                      <Form.Control
+                        disabled={true}
+                        readOnly
+                        value="Student"
+                      />
+                      <Form.Text className="text-muted">Listed</Form.Text>
+                    </Form.Group>
+                  </Form.Row>
+                </Form>
+                <Form className="flex-container row-wrap row">
+                  <Form.Row>
+                    <Form.Group as={Col}>
+                      <Form.Label className="label">
+                        Demographic Focus
+                      </Form.Label>
+                      <div>
+                        {this.state.clientFocus
+                          ? this.state.clientFocus.map((focus) => {
+                              return (
+                                <>
+                                  <Form.Control
+                                    disabled={true}
+                                    readOnly
+                                    value={focus}
+                                  />
+                                </>
+                              );
+                            })
+                          : ""}
+                        <Form.Text className="text-muted">Listed</Form.Text>
+                      </div>
+                    </Form.Group>
+                    <Form.Group as={Col}>
+                      <Form.Label className="label">Age Group Focus</Form.Label>
+                      <div>
+                        {this.state.clientAges
+                          ? this.state.clientAges.map((focus) => {
+                              return (
+                                <>
+                                  <Form.Control
+                                    disabled={true}
+                                    readOnly
+                                    value={focus}
+                                  />
+                                </>
+                              );
+                            })
+                          : ""}
+                      </div>
+                      <Form.Text className="text-muted">Listed</Form.Text>
+                    </Form.Group>
+                  </Form.Row>
+                </Form>
+                <Form className="flex-container row-wrap row">
+                  <Form.Row>
+                    <Form.Group as={Col}>
+                      <Form.Label variant="flat" className="label">
+                        Specialties
+                      </Form.Label>
+                      <div>
+                        {this.state.specialty &&
+                          this.state.specialty.map((specialty) => {
+                            return (
+                              <>
+                                <Form.Control
+                                  disabled={true}
+                                  readOnly
+                                  value={specialty}
+                                />
+                              </>
+                            );
+                          })}
+                      </div>
+                      <Form.Text className="text-muted">Listed</Form.Text>
+                    </Form.Group>
+                    <Form.Group as={Col}>
+                      <Form.Label variant="flat" className="label">
+                        Treatment & Approach
+                      </Form.Label>
+                      <div>
+                        {this.state.treatmentPreferences &&
+                          this.state.treatmentPreferences.map((treatment) => {
+                            return (
+                              <>
+                                <Form.Control
+                                  disabled={true}
+                                  readOnly
+                                  value={treatment}
+                                />
+                              </>
+                            );
+                          })}
+                      </div>
+                      <Form.Text className="text-muted">Listed</Form.Text>
+                    </Form.Group>
+                  </Form.Row>
+                </Form>
+              </div>
+            </div>
+          )}
         </>
       );
     } else {

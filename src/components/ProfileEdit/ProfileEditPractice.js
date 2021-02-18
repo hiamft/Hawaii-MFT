@@ -258,6 +258,7 @@ class ProfileEdit extends Component {
               <div className="flex-between row-wrap first">
                 <h4 className="edit-bucket">Practice Info</h4>
                 <Button
+                  variant="danger"
                   className="flex-between row-wrap edit-bucket"
                   onClick={() => this.handleSavePractice()}
                 >
@@ -375,7 +376,7 @@ class ProfileEdit extends Component {
                           this.handleChange(event, "licenseType")
                         }
                       >
-                        <option value='N/A'>N/A</option>
+                        <option value="N/A">N/A</option>
                         {this.props.license.map((license) => {
                           return (
                             <option value={license.title}>
@@ -594,8 +595,8 @@ class ProfileEdit extends Component {
                         readOnly
                         value={this.state.title}
                       />
-                        <Form.Text className="text-muted">
-                          Not Listed (for HIAMFT-use only)
+                      <Form.Text className="text-muted">
+                        Not Listed (for HIAMFT-use only)
                       </Form.Text>
                     </Form.Group>
                     <Form.Group as={Col}>
@@ -624,19 +625,19 @@ class ProfileEdit extends Component {
                     </Form.Group>
                     <Form.Group as={Col}>
                       <Form.Label className="label">Telehealth</Form.Label>
-                      {this.state.telehealth ?
-                      <Form.Control
-                        disabled={true}
-                        readOnly
-                        value={this.renderTelehealth()}
-                      />
-                      :
-                      <Form.Control
-                        disabled={true}
-                        readOnly
-                        value="Please select Yes or No"
-                      />
-                      }
+                      {this.state.telehealth ? (
+                        <Form.Control
+                          disabled={true}
+                          readOnly
+                          value={this.renderTelehealth()}
+                        />
+                      ) : (
+                        <Form.Control
+                          disabled={true}
+                          readOnly
+                          value="Please select Yes or No"
+                        />
+                      )}
                       <Form.Text className="text-muted">Listed</Form.Text>
                     </Form.Group>
                   </Form.Row>
@@ -675,20 +676,20 @@ class ProfileEdit extends Component {
                   <Form.Row>
                     <Form.Group as={Col}>
                       <Form.Label className="label">License Type</Form.Label>
-                      
-                      {this.state.licenseType ?
-                      <Form.Control
-                        disabled={true}
-                        readOnly
-                        value={this.state.licenseType} 
-                      />
-                      :
-                      <Form.Control
-                        disabled={true}
-                        readOnly
-                        value="Please select your License Type."
-                      />
-                      }
+
+                      {this.state.licenseType ? (
+                        <Form.Control
+                          disabled={true}
+                          readOnly
+                          value={this.state.licenseType}
+                        />
+                      ) : (
+                        <Form.Control
+                          disabled={true}
+                          readOnly
+                          value="Please select your License Type."
+                        />
+                      )}
 
                       <Form.Text className="text-muted">
                         Not Listed (for HIAMFT-use only) - Please list licenses

@@ -14,10 +14,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Col from 'react-bootstrap/Col';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import UploadModal from "../../UploadModal/UploadModal";
-var storage = firebase.storage().ref();
+
 
 class studentCreate extends Component {
   //create a state
@@ -170,8 +168,8 @@ class studentCreate extends Component {
       this.props.dispatch({
         type: "ADD_MEMBER",
         payload: {
-          username: this.props.user.username,
-          password: this.props.user.password,
+          username: this.props.saveUserReducer.username,
+          password: this.props.saveUserReducer.password,
           prefix: this.state.prefix,
           first_name: this.state.first_name,
           last_name: this.state.last_name,
@@ -200,11 +198,8 @@ class studentCreate extends Component {
   };
 
   render() {
-    {JSON.stringify(this.props.user)}
     return (
       <>
-        {JSON.stringify(this.props.user)}
-
         <div>
           <Prompt
             when={this.state.shouldBlockNavigation}
@@ -341,10 +336,11 @@ class studentCreate extends Component {
     );
   }
 }
-const mapStateToProps = reduxstate => ({
-    reduxstate,
-    languages: reduxstate.languages,
-    user: reduxstate.user
-  });
+const mapStateToProps = (reduxstate) => ({
+  reduxstate,
+  languages: reduxstate.languages,
+  user: reduxstate.user,
+  saveUserReducer: reduxstate.saveUserReducer,
+});
 
 export default connect(mapStateToProps)(studentCreate);
