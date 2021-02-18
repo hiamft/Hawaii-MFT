@@ -22,7 +22,14 @@ class SearchResults extends Component {
         return (
           <>
             <div className="cover-photo">
-              <div></div>
+              
+              {!this.props.therapists[0] ? 
+
+              <div className="results-bin">
+                <h3 className="center">Directory is loading...</h3>
+              </div>
+
+              :
 
               <div className="results-bin">
                 {this.props.therapists[0] && (
@@ -168,6 +175,7 @@ class SearchResults extends Component {
                   </div>
                 ))}
               </div>
+    }
             </div>
           </>
         );
