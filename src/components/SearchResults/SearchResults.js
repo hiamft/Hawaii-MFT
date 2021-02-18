@@ -24,7 +24,7 @@ class SearchResults extends Component {
             <div className="cover-photo">
               {!this.props.therapists[0] ? (
                 <div className="results-bin">
-                  <h3 className="results-number tcenter">
+                  <h3 className="results-number center">
                     Directory is loading...
                   </h3>
                 </div>
