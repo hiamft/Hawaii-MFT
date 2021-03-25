@@ -14,7 +14,6 @@ import "./ProfileEdit.css";
 import "../App/App.css";
 
 
-
 class ProfileEdit extends Component {
   //setting state, particularly for conditional render of Basic, Contact & Practice sections
   state = {
