@@ -14,7 +14,6 @@ import "./ProfileEdit.css";
 import "../App/App.css";
 
 
-
 class ProfileEdit extends Component {
   //setting state, particularly for conditional render of Basic, Contact & Practice sections
   state = {
@@ -635,7 +634,7 @@ class ProfileEdit extends Component {
                         <Form.Control
                           disabled={true}
                           readOnly
-                          value="Please select Yes or No"
+                          value={this.renderTelehealth()}
                         />
                       )}
                       <Form.Text className="text-muted">Listed</Form.Text>
