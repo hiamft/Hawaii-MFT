@@ -635,7 +635,7 @@ class ProfileEdit extends Component {
                         <Form.Control
                           disabled={true}
                           readOnly
-                          value="Please select Yes or No"
+                          value={this.renderTelehealth()}
                         />
                       )}
                       <Form.Text className="text-muted">Listed</Form.Text>
