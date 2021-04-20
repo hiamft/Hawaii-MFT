@@ -1,12 +1,6 @@
 # Hawaiian Islands Marriage and Family Therapy Directory
 
-![](public/SearchBar.png)
-![](public/ProfileView.png)
-
-
 ## Description 
-
-_Duration: 2 Week Sprint_
 
 The Hawaiian Islands Association for Marriage and Family Therapy needed an easy way to track their members and highlight therapist members to the public and potential clients. HIAMFT is currently managing its members using spreedsheets, making data management inefficient and time-consuming. Additionally, HIAMFT lacks an easy way for members to get in touch with each other, and for potential clients to find member therapists' contact information, thereby limiting mental healthcare access for those who may need it in the Hawaiian Islands. 
 
