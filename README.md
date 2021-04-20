@@ -43,9 +43,6 @@ To see the fully functional site, please visit: [http://directory.hawaiimft.org/
 6. The npm run client command will open up a new browser tab for you!
 
 
-## Usage
-TELL USER STORY HERE.
-
 ## Acknowledgement
 
 Thanks to Prime Digital Academy who equipped and helped us make this web-based directory a reality. Thank you to John and HIAMFT for letting us tackle this problem and build this web application. Thank you to my teammates for working really hard to make this a reality. 
